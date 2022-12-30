@@ -23,6 +23,7 @@ intents = discord.Intents().default()
 intents.message_content = True #required for prefix commands.
 client = commands.Bot(command_prefix='#',intents=intents,help_command=None)
 
+#load all cogs on startup.
 async def load_cogs():
     for filename in os.listdir('./cogs'):
         if filename.endswith('.py'):
